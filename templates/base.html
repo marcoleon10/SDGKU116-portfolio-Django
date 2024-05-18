@@ -6,14 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
     <link
     href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Lobster&display=swap"
     rel="stylesheet">
     <link rel="stylesheet" href="{% static './css/base.css' %}">
     <link rel="stylesheet" href="{% static './css/header.css' %}">
-    <link rel="stylesheet" href="{% static './css/sections.css' %}">
+    
     <link rel="stylesheet" href="{% static './css/footer.css' %}">
     <link rel="stylesheet" href="{% static './css/responsive.css' %}">
+    <link rel="stylesheet" href="{% static './css/sections.css' %}">
     
     <title>{% block title %}{% endblock title %}</title>
 </head>
@@ -22,7 +24,7 @@
         <!--Left side-->
         <div class="logo center-row">
             <a href="">
-                <h2>Marco Antonio León Rodríguez</h2>
+                <h2>Marco León</h2>
             </a>
         </div>
         <!--Right side-->
@@ -33,8 +35,7 @@
             <div class="nav-link center-row">
                 <a href="{% url 'about' %}">About Me</a>
                 <a href="{% url 'projects' %}">Projects</a>
-                <a href="">Experience</a>
-                <a href="">Contact</a>
+                <a href="{% url 'contact' %}">Contact</a>
             </div>
         </nav>
     </header>
@@ -44,6 +45,6 @@
 
     {% endblock content %}
 
-    <h2>Here is my footer</h2>
+    
 </body>
 </html>
