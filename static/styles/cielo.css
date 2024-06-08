@@ -1,0 +1,85 @@
+/*ARTICULO: CIELO*/
+#cielo {
+    padding-top: 100px;
+    margin-bottom: 50px;
+  }
+  
+  #cielo h2 {
+    color: #3e463b;
+    font-size: 65px;
+  }
+  
+  #cielo ul {
+    list-style-type: none; /* Elimina las viñetas predeterminadas */
+    padding-left: 0; 
+  }
+  
+  #cielo li {
+    font-size: 25px;
+    margin-right: 15px;
+    margin-left: 35px;
+    padding-left: 20px; 
+    margin-bottom: 25px; 
+    position: relative; /* Posicionamiento relativo para la viñeta personalizada */
+  }
+  
+  #cielo li:before {
+    content: "\2600"; /* Uso del carácter Unicode para viñeta */
+    color: #3e463b; /* Color de la viñeta */
+    font-size: 10px; /* Tamaño de la viñeta */
+    position: absolute; /* Posicionamiento absoluto */
+    left: 0; /* Alineación al borde izquierdo del ítem de lista */
+    top: 0; /* Alineación al top del texto */
+  }
+  
+  
+  #cielo header {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  
+  #cielo .cieloContenedor {
+    display: flex;
+    justify-content: space-between; 
+    align-items: flex-start; 
+  }
+  
+  #cielo > p {
+    align-self: auto; 
+    
+  }
+  #cielo .cieloInfo {
+    flex: 3; /* Ocupa 3/4 de la anchura de su contenedor */
+    display: flex; 
+    flex-direction: column; 
+  }
+  
+  #cielo .cieloContenedor .arbolImg {
+    flex: 1; /* Menos espacio que el contenido de texto */
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    margin-top: 70px;
+  }
+  
+  #cielo .cieloContenedor .arbolImg img {
+    width: 100%; 
+    max-width: 400px; /* Limita el tamaño máximo de la imagen */
+    border-radius: 15px;
+  }
+  
+  #cielo .cieloContenedor .cieloInfo .cieloLista {
+    padding: 15px;
+    margin-top: 20px;
+  }
+  
+  #cielo .cieloFuente{
+    margin-top: 5px;
+  }
+  
+  #cielo .cieloFuente p, .cieloFuente a{
+    font-family: "Fira Sans Condensed", sans-serif;
+    font-weight: 200;
+  }
+  

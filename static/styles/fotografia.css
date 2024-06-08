@@ -1,0 +1,57 @@
+  
+  /*ARTICULO FOTOGRAFIA*/
+  #fotografia {
+    padding-top: 150px;
+    margin-bottom: 150px;
+  }
+  
+  #fotografia header{
+    text-align: center;
+    padding: 20px;
+  }
+  
+  #fotografia .fotografiaContainer {
+    display: flex;
+    justify-content: space-between; /* Alinea los hijos a los extremos del contenedor */
+    align-items: flex-start; /* Alinea los hijos al inicio verticalmente */
+    margin-top: 15px;
+    margin-bottom: 75px;
+  }
+  
+  #fotografia .fotografiaInfo {
+    flex: 1; /* Ocupa más espacio que el div de la imagen */
+    display: flex; 
+    flex-direction: column; /* Alinea el contenido en columnas (verticalmente) */
+  }
+  
+  #fotografia .fotografiaInfo p{
+    font-size: 22px;
+    margin-right: 70px;
+    margin-left: 70px;
+  
+  }
+  
+  #fotografia .fotografiaImg {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Crea dos columnas de igual tamaño */
+    grid-gap: 20px; /* Espacio entre las imágenes */
+    max-height: 500px;
+    max-width: 500px;
+  }
+  
+  #fotografia .fotografiaImg img {
+    width: 100%; /* Asegura que las imágenes ocupen todo el espacio de la celda */
+    height: auto; /* Mantiene la proporción de las imágenes */
+    border-radius: 8px; 
+  }
+  
+  #fotografia .fotografiaFuente{
+    margin-top: 5px;
+  }
+  
+  #fotografia .fotografiaFuente p, #fotografia .fotografiaFuente a{
+    font-family: "Fira Sans Condensed", sans-serif;
+    font-weight: 200;
+  }
+  
+  

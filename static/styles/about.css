@@ -1,0 +1,45 @@
+/*ACERCA DE MI*/
+#about {
+  display: flex;
+  justify-content: space-between; /* Alinea los hijos a los extremos del contenedor */
+  align-items: flex-start;
+  padding-top: 100px; /* Añade espacio arriba del contenido para que entre bien en la vista cuando se desplace*/
+}
+
+#about p {
+  font-size: 22px;
+}
+
+#about img {
+  width: 35%;
+  height: 35%;
+  border-radius: 15px;
+  margin-left: auto;
+}
+
+#about header {
+  text-align: center;
+  color: #3e463b;
+  margin-top: -50px;
+  margin-bottom: 50px;
+  /* Quitado el position:absolute y los márgenes excesivos */
+}
+
+#about .aboutInfo h2 {
+  font-size: 45px;
+}
+
+#about .aboutInfo {
+  flex: 2; /* Ocupa la mitad del espacio */
+  display: flex; /* Habilita flexbox para su contenido */
+  flex-direction: column; /* Los pone en columnas*/
+}
+
+#about .aboutImg {
+  flex: 2; /* Ocupa la mitad del espacio */
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  margin-top: auto;
+  margin-bottom: auto;
+}

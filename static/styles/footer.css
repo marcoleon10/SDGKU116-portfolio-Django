@@ -1,0 +1,122 @@
+/*FOOTER*/
+  
+#footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; /* Alinea los elementos al inicio verticalmente */
+    padding: 15px 30px;
+    background-image: url('/static/imagenes/footergif.gif');
+    background-size: cover;
+    background-position: center;
+    position: relative; /* Establece una posición relativa para posicionar elementos absolutos dentro */
+    overflow: hidden;
+  }
+  
+  #footer h1, #footer h3 {
+    color: white; /* Estilo consistente para los encabezados */
+  }
+  
+  .footerInfo, .footerCopyright, .footerSigueme {
+    flex: 1; /* Asegura que cada sección ocupe un poco menos de un tercio del espacio disponible */
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: flex-start; /* Alinea los elementos al inicio en el eje vertical */
+    margin-top: 15px;
+  }
+  
+  .footerInfo form {
+    width: 100%; /* Ocupa todo el ancho de .footerInfo */
+  }
+  
+  .footerInfo input[type="email"] {
+    width: calc(100% - 20px); /* Calcula el ancho total menos el padding para evitar desbordamientos */
+    margin: 10px 0; /* Añade espacio arriba y abajo del campo de entrada */
+    padding: 10px;
+    border: 1px solid #ccc; /* Agrega un borde para resaltar el campo de entrada */
+    border-radius: 5px; /* Agrega bordes redondeados al campo de entrada */
+    color: black; 
+  }
+  
+  .footerInfo input[type="submit"] {
+    width: 100%; /* Asegura que el botón de enviar ocupe todo el ancho */
+    margin-top: 10px; /* Añade un espacio entre el campo de entrada y el botón de enviar */
+    padding: 10px;
+    font-family: "Fira Sans Condensed", sans-serif;
+    font-weight: 400;
+    background-color: #3e463b; /* Color verde-oscuro para el botón */
+    color: white;
+    border: none;
+    border-radius: 5px; /* Agrega bordes redondeados al botón de enviar */
+    cursor: pointer;
+  }
+  
+  .footerInfo input[type="submit"]:hover {
+    background-color: #272c26;
+  }
+  
+  
+  
+  
+  .footerCopyright {
+    justify-content: center; /* Alinea los elementos horizontalmente al centro */
+    align-items: center; /* Alinea los elementos verticalmente al centro */
+    text-align: center; /* Alinea el texto al centro */
+    margin-top: auto; /* Empuja el elemento hacia abajo */
+  }
+  
+  .footerSigueme .footerIconos {
+    display: flex; /* Habilita flexbox para los iconos */
+    justify-content: center; /* Alinea los iconos al centro horizontalmente */
+    margin-bottom: 15px;
+  }
+  
+  .footerSigueme {
+    position: absolute;
+    right: 30px;
+    top: 30px;
+    width: 170px; 
+    align-items: center;
+    text-align: center;
+  }
+  
+  
+  
+  #footer::after{
+    content: ""; /* Necesario para que el elemento se muestre */
+    position: absolute; /* Posiciona absolutamente dentro de su contenedor relativo */
+    top: 0; left: 0; right: 0; bottom: 0; /* Se extiende de esquina a esquina */
+    background-color: rgba(0, 0, 0, 0.5); /* Color semitransparente para oscurecer el fondo */
+    z-index: 1; /* Asegura que esté debajo del contenido, en este caso todos los botones y títulos y subtítulos*/
+  
+  }
+  
+  .footerInfo h1, .footerInfo input[type="submit"], .footerCopyright h4, .footerSigueme h2, .footerInfo p, .footerIconos a {
+    position: relative; /* Necesario para ajustar z-index */
+    z-index: 2; /* Mantiene el texto por encima del elemento semitransparente oscuro */
+    color: white; 
+  }
+  
+  .footerInfo input[type="email"]{
+    position: relative; /* Necesario para ajustar z-index */
+    z-index: 2;
+  }
+  
+  
+  .footerIconos a {
+    color: #FFF; /* Color blanco, ajusta según tu esquema de color */
+    margin: 0 10px; /* Espaciado horizontal entre íconos */
+    font-size: 35px; /* Tamaño de los íconos */
+    transition: color 0.3s ease; /* Transición suave para el cambio de color */
+  }
+  
+  .footerIconos a:hover {
+    color: #9e9e9e; /* Color al pasar el mouse */
+  }
+  
+  .footerMainContent {
+    display: flex;
+    flex-direction: row;
+    width: calc(100% - 200px); /* Ajuste para asegurar espacio para .footerSigueme */
+  }
+  

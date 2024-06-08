@@ -1,0 +1,95 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html{
+  scroll-behavior: smooth;
+}
+
+
+
+
+/*Poner la misma tipografía y tamaño dependiendo si son títulos, subtítulos o texto*/
+h1{
+  color: #3e463b;
+  font-family: 'DM Serif Display', serif;
+  font-weight: 100;
+  font-size: 65px;
+}
+
+h2{
+  
+  font-family: 'DM Serif Display', serif;
+  font-weight: 100;
+  font-size: 35px;
+}
+
+h3, h4, h5, h6 {
+  font-family: 'DM Serif Display', serif;
+  font-weight: 100;
+}
+
+.palabra-color {
+  color: #3e463b; 
+}
+
+p, li, span{
+  font-family: "Fira Sans Condensed", sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+}
+
+.container {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.like-dislike-container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.like-btn, .dislike-btn {
+  background-color: #007bff;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  margin: 5px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.like-btn:hover, .dislike-btn:hover {
+  background-color: #0056b3;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,50 +1,397 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Blog</title>
+    <meta http-equiv="author" content="Marco León"> <!-- Especifica el autor -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
-    <link
-    href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Lobster&display=swap"
-    rel="stylesheet">
-    <link rel="stylesheet" href="{% static './css/base.css' %}">
-    <link rel="stylesheet" href="{% static './css/header.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static './styles/style.css' %}">
+    <link rel="stylesheet" href="{% static './styles/about.css' %}">
+    <link rel="stylesheet" href="{% static './styles/blog.css' %}">
+    <link rel="stylesheet" href="{% static './styles/cielo.css' %}">
+    <link rel="stylesheet" href="{% static './styles/deporte.css' %}">
+    <link rel="stylesheet" href="{% static './styles/fotografia.css' %}">
+    <link rel="stylesheet" href="{% static './styles/footer.css' %}">
+    <link rel="stylesheet" href="{% static './styles/hero.css' %}">
+    <link rel="stylesheet" href="{% static './styles/navbar.css' %}">
+    <link rel="stylesheet" href="{% static './styles/responsive.css' %}">
     
-    <link rel="stylesheet" href="{% static './css/footer.css' %}">
-    <link rel="stylesheet" href="{% static './css/responsive.css' %}">
-    <link rel="stylesheet" href="{% static './css/sections.css' %}">
-    
-    <title>{% block title %}{% endblock title %}</title>
 </head>
 <body>
-    <header class="center-row">
-        <!--Left side-->
-        <div class="logo center-row">
-            <a href="">
-                <h2>Marco León</h2>
-            </a>
-        </div>
-        <!--Right side-->
-        <nav>
-            <!--Hamburguer Button-->
 
-
-            <div class="nav-link center-row">
-                <a href="{% url 'about' %}">About Me</a>
-                <a href="{% url 'projects' %}">Projects</a>
-                <a href="{% url 'contact' %}">Contact</a>
+    <header id="home">
+        <div class="navbar">
+            <h3>L.R. Marco Antonio's Production</h2>
+            <button class="hamburger" aria-label="Abrir menú">☰</button>  <!-- Botón de menú hamburguesa -->
+            <!-- Opciones de navegación -->
+            <div class="menu">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About Me</a></li>
+                    <li><a href="#blog">Blog</a></li>
+                    <li><a href="#footer">Contact</a></li>
+                </ul>
             </div>
-        </nav>
+            <div class="user-icon" aria-label="Usuario" role="button">
+                <i class="fas fa-user"></i>
+                <div class="menu">
+                    <ul>
+                        <!-- Opciones de inicio de sesión ocultas por defecto -->
+                        {% if user.is_authenticated %}
+                            <li><a href="{% url 'password_change' %}">Password Change</a></li>
+                            <li><a href="{% url 'password_reset' %}">Password Reset</a></li>
+                            <form method="POST" action="{% url 'logout' %}">
+                                {% csrf_token %}
+                                <!--<li><a>Log out</a></li>-->
+                                <input type="submit" class="nav-links" value="Log Out">
+                            </form>
+                        {% else %}
+                            <li><a href="{% url 'signup' %}">Sign Up</a></li>
+                            <li><a href="{% url 'login' %}">Log In</a></li>
+                        {% endif %}
+                    </ul>
+                </div>
+            </div>
+            
+        </div>
+        <div class="hero">
+            <h1>
+                HABUL
+            </h1>
+            <h2>
+                Personal Blog Web
+            </h2>
+        </div>
     </header>
-
-    {% block content %}
-
-
-    {% endblock content %}
-
     
+    <main class="container">
+        <article id="about">
+            <div class="aboutInfo">
+                <header>
+                    <h1>About Me</h1>
+                </header>
+                <h2>I am...</h2>
+                <br>
+                <p>Marco Antonio León Rodríguez. I am 21 years old. I was born in Tijuana, Baja California on November 10, 2002. I am currently studying Software Engineering at the Autonomous University of Baja California. <br><br>I like watching starry nights; because I usually see them when I am free, and I enjoy that. I like a clear blue sky; because the theory of color emotionally influences humans, and when we see royal blue, we tend to be happier. I like warmth; because there is no need for a jacket or the sensation of numb hands. I enjoy sports; for the excitement and adrenaline I share, and photography; because I like to think that behind every photo or multimedia there is a story or experience.</p>
+
+            </div>
+            <div class="aboutImg">
+                <img src="{% static '/imagenes/yo.jpg' %}" alt="Author's face">
+                <img src="{% static '/imagenes/jugando.JPG' %}" alt="Playing volleyball" class="hide-on-mobile">
+            </div>
+        </article>
+
+        
+        <nav id="blog">
+            <header class="navTitulo">
+                <h1>Blogs</h1>
+            </header>
+            <section class="navBlog">
+                <div class="navCielo">
+                    <a href="#cielo">
+                        <h1>5 things you didn't know about skies</h1>
+                    </a>
+                </div>
+                <div class="navDeporte">
+                    <a href="#deporte">
+                        <h1>The sports more popular in 2024</h1>
+                    </a>
+                </div>
+                <div class="navFotografia">
+                    <a href="#fotografia">
+                        <h1>Photography as art</h1>
+                    </a>
+                </div>
+            </section>
+            
+        </nav>
+
+        <article id="cielo">
+            <p><i>Publication date: February 08, 2024</i></p>
+            <div class="cieloFuente">
+                <p>Source: Wikipedia contributors. (2024, March 3). A modern myth. Things seen in the sky. Wikipedia, The Free Encyclopedia. </p>
+                <a href="https://es.wikipedia.org/wiki/Un_mito_moderno._De_cosas_que_se_ven_en_el_cielo">Read more...</a>
+            </div>
+            <div class="cieloContenedor">
+                <div class="cieloInfo">
+                    <header>
+                        <h1>Did you know these 5 interesting facts about the <u>skies</u></h1>
+                    </header>
+                    <div class="cieloLista">
+                        <ul>
+                            <li>Sunset colors are due to Rayleigh scattering, where smaller particles scatter blue light more than red.</li>
+                            <li>The longest recorded lightning traveled 709 kilometers in Brazil in 2018.</li>
+                            <li>The aurora borealis is caused by solar particles colliding with Earth's atmosphere, creating lights at the poles.</li>
+                            <li>Halos around the sun or moon are caused by the refraction of light through ice crystals in the atmosphere.</li>
+                            <li>Cumulonimbus clouds can grow to over 12 km in height, reaching the tropopause, the boundary between the troposphere and the stratosphere.</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="arbolImg">
+                    <img src="{% static '/imagenes/sobre_arbol.jpg' %}" alt="Tree">
+                </div>
+            </div>
+            <div class="like-dislike-container" id="like-dislike-container-cielo">
+                <p>Likes: <span id="likes-cielo"></span></p>
+                <p>Dislikes: <span id="dislikes-cielo"></span></p>
+                {% if user.is_authenticated %}
+                    <button class="like-btn" data-section="cielo" data-action="like"><i class="fas fa-thumbs-up"></i> Like</button>
+                    <button class="dislike-btn" data-section="cielo" data-action="dislike"><i class="fas fa-thumbs-down"></i> Dislike</button>
+                {% else %}
+                    <p>Login to like or dislike this section.</p>
+                {% endif %}
+            </div>
+            
+        </article>
+
+        <article id="deporte">
+            <p><i>Publication date: March 07, 2024</i></p>
+            <div class="deporteFuente">
+                <p>Source: Daily News. (2024, April 2). The top 10 most popular sports in the world 2023. dailynewshungary.com. </p>
+                <a href="https://dailynewshungary.com/es/Los-10-deportes-m%C3%A1s-populares-del-mundo-2023/">Read more...</a>
+            </div>
+            <header>    
+                <h1>The most popular <u>sports</u> of 2023</h1>
+            </header>
+            <div class="deporteContainer">
+                <div class="voleibolContainer">
+                    <h2>Volleyball</h2>
+                    <div class="deporteVoleibolImagenes">
+                        <img src="{% static '/imagenes/exp_volley.JPG' %}" alt="End of match">
+                        <img src="{% static '/imagenes/exp_grupo.JPG' %}" alt="Volleyball group">
+                    </div>
+                    <p>In 2023, volleyball increased in popularity due to extensive coverage of international events, effective use of social media, and improvements in professional leagues. These factors, along with a return to post-pandemic normalcy, made the sport more accessible and appealing to a wide audience. Live broadcasting of major tournaments, such as the World Championships and Olympic tournaments, allowed fans worldwide to follow the competitions in real time, thus increasing global enthusiasm and support.</p>
+                </div>
+                <div class="futbolContainer">
+                    <h2>Soccer</h2>
+                    <div class="deporteFutbolImagenes">
+                        <img src="{% static '/imagenes/futbol.jpg' %}" alt="Soccer">
+                    </div>
+                    <p>Soccer remains one of the most popular sports in the world, with a loyal fan base and extensive media coverage. In 2023, the FIFA World Cup and the Euro Cup were standout events that attracted millions of viewers worldwide.</p>
+                </div>
+            </div>
+            <div class="like-dislike-container" id="like-dislike-container-deporte">
+                <p>Likes: <span id="likes-deporte"></span></p>
+                <p>Dislikes: <span id="dislikes-deporte"></span></p>
+                {% if user.is_authenticated %}
+                    <button class="like-btn" data-section="deporte" data-action="like"><i class="fas fa-thumbs-up"></i> Like</button>
+                    <button class="dislike-btn" data-section="deporte" data-action="dislike"><i class="fas fa-thumbs-down"></i> Dislike</button>
+                {% else %}
+                    <p>Login to like or dislike this section.</p>
+                {% endif %}
+            </div>
+            
+        </article>
+
+        <article id="fotografia">
+            <p><i>Publication date: April 10, 2024</i></p>
+            <div class="fotografiaFuente">
+                <p>Source: Daily News. (2024, April 2). The top 10 most popular sports in the world 2023. dailynewshungary.com. </p>
+                <a href="https://dailynewshungary.com/es/Los-10-deportes-m%C3%A1s-populares-del-mundo-2023/">Read more...</a>
+            </div>
+            <div class="fotografiaContainer">
+                <div class="fotografiaInfo">
+                    <header>
+                        <h1><u>Photography</u> as art</h1>
+                    </header>
+                    <p>Photography, as a means of artistic expression, not only documents reality but also plays with visual elements to alter or emphasize certain characteristics of the captured scene. Photographers, like painters or sculptors, consciously choose what to include or exclude in their frame, how to organize the elements within it, and how to use light and shadow to create a particular atmosphere or feeling. <br><br>Technological development has expanded the possibilities of photography, allowing artists to experiment with different techniques and processes, from digital editing to photographic manipulation, which can transform an ordinary image into a surreal or abstract experience. This level of artistic manipulation challenges our traditional perceptions of photography as a mere reflection of reality, firmly positioning it in the field of art.</p>
+                </div>
+
+                <div class="fotografiaImg">
+                    <img src="{% static '/imagenes/port_guada.jpg' %}" alt="">
+                    <img src="{% static '/imagenes/port_paraguas.jpg' %}" alt="">
+                    <img src="{% static '/imagenes/port_noche.jpg' %}" class="hide-on-small">
+                    <img src="{% static '/imagenes/port_iglesia.jpg' %}" class="hide-on-small">
+                </div>
+            </div>
+            <!-- En el HTML -->
+            <div class="like-dislike-container" id="like-dislike-container-fotografia">
+                <p>Likes: <span id="likes-fotografia"></span></p>
+                <p>Dislikes: <span id="dislikes-fotografia"></span></p>
+                {% if user.is_authenticated %}
+                    <button class="like-btn" data-section="fotografia" data-action="like"><i class="fas fa-thumbs-up"></i> Like</button>
+                    <button class="dislike-btn" data-section="fotografia" data-action="dislike"><i class="fas fa-thumbs-down"></i> Dislike</button>
+                {% else %}
+                    <p>Login to like or dislike this section.</p>
+                {% endif %}
+            </div>           
+
+        </article>
+    </main>
+    {% block content %}
+        <footer id="footer">
+            <div class="footerMainContent">
+                <div class="footerInfo">
+                    <h1>FOR MORE CONTENT...</h1>
+                    <form method="post" action="{% url 'send_email' %}">
+                        {% csrf_token %}
+                        <p>Provide your email to not miss any news of the moment.</p>
+                        <input type="email" placeholder="myexample@gmail.com" name="email">
+                        <input type="submit" value="Send">
+                    </form>
+                </div>
+                <div class="footerCopyright">
+                    <h4>&copy; 2024 HABUL. All rights reserved.</h4>
+                </div>
+            </div>
+        
+            <div class="footerSigueme">
+                <h2>Follow me!</h2>
+                <div class="footerIconos">
+                    <a href="https://www.instagram.com/" target="_blank" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://www.facebook.com/" target="_blank" aria-label="Facebook">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <a href="https://twitter.com/" target="_blank" aria-label="Twitter">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                </div>
+            </div>
+        </footer>
+    {% endblock content %}
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const hamburger = document.querySelector('.hamburger');
+            const menu = document.querySelector('.menu');
+            const userIcon = document.querySelector('.user-icon');
+            const userMenu = document.querySelector('.user-icon .menu');
+            const navLinks = document.querySelector('.nav-links');
+        
+            if (menu) {
+                menu.style.display = 'none';
+            }
+            if (userMenu) {
+                userMenu.style.display = 'none';
+            }
+        
+            if (hamburger) {
+                hamburger.addEventListener('click', function() {
+                    if (menu) {
+                        menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+                    }
+                });
+            }
+        
+            if (userIcon) {
+                userIcon.addEventListener('click', function() {
+                    if (userMenu) {
+                        userMenu.style.display = userMenu.style.display === 'block' ? 'none' : 'block';
+                    }
+                });
+            }
+        
+            function handleResize() {
+                if (window.innerWidth > 767) {
+                    if (menu) {
+                        menu.style.display = 'block';
+                    }
+                } else {
+                    if (menu) {
+                        menu.style.display = 'none';
+                    }
+                }
+            }
+        
+            window.addEventListener('resize', handleResize);
+            handleResize();
+        
+            if (navLinks) {
+                navLinks.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        if (menu) {
+                            menu.style.display = 'none';
+                        }
+                    });
+                });
+            }
+        
+            if (userMenu) {
+                userMenu.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        if (userMenu) {
+                            userMenu.style.display = 'none';
+                        }
+                    });
+                });
+            }
+            function getCookie(name) {
+                let cookieValue = null;
+                if (document.cookie && document.cookie !== '') {
+                    const cookies = document.cookie.split(';');
+                    for (let i = 0; i < cookies.length; i++) {
+                        const cookie = cookies[i].trim();
+                        if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                            cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                            break;
+                        }
+                    }
+                }
+                return cookieValue;
+            }
+            
+            // Función para manejar los "likes" y "dislikes"
+            function handleLikeDislike(section, action) {
+                if (section && action) {
+                    fetch(`/like_dislike/${action}/${section}/`, {
+                        method: 'POST',
+                        headers: {
+                            'X-CSRFToken': getCookie('csrftoken'),
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({ action: action })
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.likes !== undefined && data.dislikes !== undefined) {
+                            document.getElementById(`likes-${section}`).innerText = data.likes;
+                            document.getElementById(`dislikes-${section}`).innerText = data.dislikes;
+                        } else {
+                            console.error('Error: Invalid response format.');
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error:', error.message);
+                        alert('Error: ' + error.message);
+                    });
+                } else {
+                    console.error('Section or action is not defined.');
+                    alert('Section or action is not defined.');
+                }
+            }
+            
+            
+            // Resto del código
+            const likeButtons = document.querySelectorAll('.like-btn');
+            const dislikeButtons = document.querySelectorAll('.dislike-btn');
+            
+            likeButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const section = this.getAttribute('data-section');
+                    const action = this.getAttribute('data-action');
+                    handleLikeDislike(section, action);
+                });
+            });
+            
+            dislikeButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const section = this.getAttribute('data-section');
+                    const action = this.getAttribute('data-action');
+                    handleLikeDislike(section, action);
+                });
+            });
+            
+        });
+        
+    </script>    
 </body>
 </html>

@@ -1,0 +1,84 @@
+/* Estilos generales del navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  position: fixed;
+  width: 100%;
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+}
+
+/* Estilos para los elementos del menú principal */
+.navbar .menu ul {
+  list-style: none;
+  display: flex;
+}
+
+.navbar .menu ul li {
+  margin-right: 50px;
+}
+
+.navbar .menu li a {
+  text-decoration: none;
+  color: #3e463b;
+  font-family: 'DM Serif Display', serif;
+  font-size: 21px;
+}
+
+.navbar .menu li a:hover {
+  color: #2d312b;
+  font-size: 25px;
+}
+
+/* Estilos para el botón de hamburguesa en dispositivos móviles */
+.navbar .hamburger {
+  display: none;
+  font-size: 30px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Estilos para el contenedor del user-icon */
+.navbar .user-icon {
+  position: relative; /* Establece una posición relativa para el contenedor del user-icon */
+}
+
+* Estilos para el icono de usuario y su menú */
+.user-icon {
+  position: relative;
+}
+
+.user-icon .menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: none;
+  z-index: 9999;
+}
+
+.user-icon .menu.active {
+  display: block;
+}
+
+.user-icon .menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.user-icon .menu ul li {
+  border-bottom: 1px solid #ccc;
+}
+
+.user-icon .menu ul li a {
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+}
+

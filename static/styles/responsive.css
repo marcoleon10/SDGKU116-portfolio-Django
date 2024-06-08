@@ -1,0 +1,466 @@
+  /*RESPONSIVO*/
+  /* Tablets (Pantallas medianas) */
+  @media (min-width: 768px) and (max-width: 991px) {
+    .navbar .menu ul li {
+        margin-right: 15px;
+    }
+  
+    .navbar .menu li a {
+        font-size: 20px;
+    }
+  
+    .hero h1 {
+        font-size: 80px;
+    }
+  
+    .hero h2 {
+        font-size: 30px;
+    }
+  
+    .hero {
+        padding: 0 50px;
+    }
+  }
+  /* Tablets (Pantallas chicas - Teléfonos) */
+  @media (max-width: 767px) {
+    .navbar {
+      flex-direction: row; 
+      padding: 10px;
+    }
+  
+    .navbar .hamburger {
+      display: block; 
+      cursor: pointer; 
+    }
+  
+    .navbar .menu {
+      display: none; 
+      width: 100%; 
+      position: absolute; 
+      top: 100%; 
+      left: 0; 
+      background-color: white; 
+    }
+  
+    .navbar .menu ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      text-align: center; 
+    }
+  
+    .navbar .menu ul li {
+      display: block; 
+      width: 100%; 
+    }
+  
+    .navbar .menu ul li a {
+      display: block;
+      padding: 10px; 
+      border-bottom: 1px solid #ccc;
+      text-decoration: none; 
+    }
+  
+    .user-icon .menu {
+      width: 100%; 
+      left: 0;
+      right: 0;
+      position: fixed; /* Aseguramos que esté fijo en la pantalla */
+      top: 60px; /* Justo debajo del navbar */
+      z-index: 1000;
+      max-height: calc(100vh - 60px); /* Asegura que el menú no exceda la altura de la pantalla */
+      overflow-y: auto; /* Permite desplazarse si el contenido es demasiado largo */
+    }
+  
+    .user-icon .menu ul li {
+      border-bottom: 1px solid #ccc; /* Asegura que los bordes se vean en el menú de usuario */
+    }
+  
+    .user-icon .menu ul li a {
+      padding: 10px; /* Espaciado en los enlaces del menú de usuario */
+    }
+    .hero h1 {
+        font-size: 65px;
+    }
+  
+    .hero h2 {
+        font-size: 20px;
+    }
+  
+    .hero {
+        height: 50vh;
+        padding: 0 20px;
+    }
+  }
+  
+  
+  /*RESPONSIVO*/
+  
+  /* Media Queries para Tablets */
+  @media (min-width: 768px) and (max-width: 1300px) {
+    
+    .hide-on-mobile {
+      display: none;
+    }
+  
+    #about {
+      flex-direction: column;
+      align-items: center;
+      padding-top: 50px;
+    }
+  
+    #about .aboutInfo {
+      order: 1; /*Que empiece este estilo primero*/
+    }
+  
+    #about .aboutImg {
+      order: 2; /*Que empiece este estilo segundo*/
+      flex-direction: column; /* Asegura que las imágenes se apilen verticalmente */
+      margin-bottom: 20px;
+    }
+  
+    #about .aboutInfo h2 {
+      font-size: 30px;
+    }
+  
+    #about p {
+      font-size: 22px;
+      margin-bottom: 50px; /* Espacio después del párrafo */
+    }
+  
+  
+    #about img {
+      width: 85%; /* Ajusta el tamaño de la imagen */
+      height: auto; /* Mantiene la relación de aspecto de la imagen */
+      margin: 0 auto; /* Adicionalmente centra la imagen si no ocupa todo el ancho disponible */
+    }
+  
+  }
+  
+  /* Media Queries para Móviles */
+  @media (max-width: 767px) {
+  
+    .hide-on-mobile {
+      display: none;
+    }
+  
+    #about {
+      flex-direction: column;
+      align-items: center;
+      padding-top: 50px;
+    }
+  
+    #about .aboutInfo {
+      order: 1;
+    }
+  
+    #about .aboutImg {
+      order: 2;
+      flex-direction: column; /* Asegura que las imágenes se apilen verticalmente */
+      margin-bottom: 20px;
+    }
+  
+    #about .aboutInfo h2 {
+      font-size: 30px;
+    }
+  
+    #about p {
+      font-size: 22px;
+      margin-bottom: 50px; /* Espacio después del párrafo */
+    }
+  
+    #about img {
+      width: 85%; /* Ajusta el tamaño de la imagen */
+      height: auto; /* Mantiene la relación de aspecto de la imagen */
+      margin: 0 auto; /* Adicionalmente centra la imagen si no ocupa todo el ancho disponible */
+    }
+  }
+
+
+/*RESPONSIVO*/
+@media (min-width: 992px) {
+    #blog .navBlog {
+      max-width: 1200px; 
+      margin: 25px auto; 
+    }
+  
+    #blog .navCielo, #blog .navDeporte, #blog .navFotografia {
+      flex: 1 1 30%; /* Ajuste para flexbox, permitiendo que cada bloque tome un tercio del espacio disponible */
+      margin: 10px; 
+    }
+  
+    #blog .navBlog h1 {
+      font-size: 34px; /* Aumenta el tamaño del texto para pantallas más grandes */
+    }
+  }
+  /* Estilos para móviles (hasta 767px) */
+  @media (max-width: 767px) {
+    #blog .navBlog {
+      flex-direction: column; 
+      align-items: center; 
+    }
+  
+    #blog .navCielo, #blog .navDeporte, #blog .navFotografia {
+      width: 100%; 
+      padding: 30px; 
+      margin-bottom: 20px; 
+      background-size: cover; /* Asegura que la imagen de fondo cubra todo el espacio */
+      background-position: center; /* Centra la imagen de fondo */
+      justify-content: center; 
+      align-items: center; 
+      text-align: center; 
+    }
+  
+    #blog .navBlog h1 {
+      font-size: 35px; 
+    }
+  }
+  
+  /* Estilos para tabletas (entre 768px y 991px) */
+  @media (min-width: 768px) and (max-width: 991px) {
+    #blog .navBlog {
+      flex-direction: row; 
+      justify-content: space-between; 
+      flex-wrap: wrap; /* Permite que los elementos se ajusten según el ancho disponible */
+    }
+  
+    #blog .navCielo, #blog .navDeporte, #blog .navFotografia {
+      width: calc(50% - 20px); /* Ajusta el ancho para que dos elementos quepan en una fila */
+      padding: 40px; 
+      margin: 10px; 
+      background-size: cover; 
+      background-position: center;
+    }
+  
+    #blog .navBlog h1 {
+      font-size: 35px;
+    }
+  }
+
+
+  /*RESPONSIVO*/
+  @media (min-width: 768px) and (max-width: 1400px) {
+    #cielo .cieloContenedor {
+      flex-direction: column; /* Cambia la disposición a vertical */
+    }
+  
+    #cielo p{
+      font-size: 22px;
+    }
+  
+    #cielo .cieloInfo {
+      order: 1; 
+      padding-top: 20px; 
+    }
+    
+   
+  
+    #cielo .arbolImg {
+      order: 2; /* Asegura que el texto vaya primero */
+      margin-top: 0; 
+      width: 100%; /* Ajusta el ancho del contenedor de imagen al ancho completo */
+    }
+  
+    #cielo .arbolImg img {
+      max-width: 55%; /* Hace que la imagen sea completamente responsiva */
+      margin-bottom: 50px;
+    }
+  }
+  
+  @media (max-width: 767px) {
+    #cielo {
+      padding-top: 50px; /* Reduce el padding superior para pantallas pequeñas */
+    }
+  
+    #cielo p{
+      font-size: 22px;
+    }
+  
+    #cielo .cieloContenedor {
+      flex-direction: column; /* Cambia la disposición a vertical */
+    }
+  
+    #cielo .cieloInfo, .arbolImg {
+      width: 100%; /* Ocupa todo el ancho disponible */
+    }
+  
+    #cielo .arbolImg {
+      margin-top: 30px; /* Añade un poco de espacio entre la imagen y el texto */
+    }
+  
+    #cielo .arbolImg img {
+      max-width: 65%; /* Hace que la imagen sea completamente responsiva */
+      height: auto; /* Mantiene la proporción de la imagen */
+    }
+  
+    
+  
+    #cielo li {
+      font-size: 25px; /* Reduce el tamaño del texto de la lista */
+      margin-right: 0px;
+      margin-left: 0px;
+    }
+    
+  
+    #cielo li:before {
+      font-size: 15px; /* Ajusta el tamaño de la viñeta */
+    }
+  }
+  
+  /*RESPONSIVO*/
+  @media (min-width: 828px) and (max-width: 1380px) {
+    #deporte .deporteContainer {
+      flex-direction: column; /* Cambia el layout a vertical */
+    }
+  
+    #deporte .voleibolContainer, #deporte .futbolContainer {
+      width: 100%; /* Ocupa todo el ancho disponible */
+      margin-bottom: 30px; 
+      align-items: center;
+    }
+  
+    #deporte .deporteVoleibolImagenes img, #deporte .deporteFutbolImagenes img {
+      max-height: 300px; /* Reduce la altura máxima de las imágenes */
+      margin-left: 50px; 
+      margin-right: auto; /* Centra las imágenes */
+    }
+  
+    #deporte .voleibolContainer p, #deporte .futbolContainer p {
+      font-size: 20px; 
+      margin-right: 50px;
+      margin-left: 50px;
+    }
+  }
+  
+  @media (max-width: 828px) {
+    #deporte {
+      padding-top: 30px; /* Reduce el espacio superior para pantallas pequeñas */
+    }
+  
+    #deporte .deporteContainer {
+      flex-direction: column; /* Cambia el layout a vertical */
+    }
+  
+    #deporte .voleibolContainer, #deporte .futbolContainer {
+      margin-top: 45px;
+      width: 100%; /* Ocupa todo el ancho disponible */
+      margin-bottom: 45px; 
+      align-items: center;
+    }
+  
+    #deporte .deporteVoleibolImagenes img, #deporte .deporteFutbolImagenes img {
+      max-height: 250px; /* Reduce la altura máxima de las imágenes */
+      margin-left: auto; 
+      margin-right: auto; /* Centra las imágenes */
+      
+    }
+  
+    #deporte .voleibolContainer p, #deporte .futbolContainer p {
+      font-size: 25px; 
+      margin-right: 20px;
+      margin-left: 20px;
+    }
+  
+    #deporte .voleibolContainer h2, #deporte .futbolContainer h2 {
+      font-size: 35px; 
+    }
+  }
+  /*RESPONSIVO*/
+@media (min-width: 1070px) and (max-width: 1300px) {
+    #fotografia .fotografiaInfo p {
+      font-size: 22px; 
+      margin-right: 40px;
+      margin-left: 40px;
+    }
+  
+    #fotografia .fotografiaImg {
+      grid-template-columns: repeat(2, 1fr); /* Mantenemos dos columnas */
+      max-width: 55%; /* Limita el ancho del contenedor de imágenes */
+      grid-gap: 20px; /* Espacio entre imágenes ajustado */
+      margin-top: auto;
+      margin-bottom: auto;
+    }
+  }
+  
+  @media (max-width: 1070px) {
+    #fotografia .fotografiaInfo p {
+      font-size: 25px; 
+      margin-right: 20px;
+      margin-left: 20px;
+    }
+  
+    #fotografia .fotografiaContainer {
+      flex-direction: column; /* Cambio a una disposición en columna para el contenedor principal */
+    }
+  
+    #fotografia .fotografiaImg {
+      grid-template-columns: repeat(2, 1fr); /* Mantenemos dos columnas */
+      max-width: 100%;
+      grid-gap: 10px; /* Espacio reducido entre imágenes */
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 50px;
+    }
+    #fotografia .hide-on-small {
+      display: none; /* Oculta las imágenes con esta clase en pantallas pequeñas */
+    }
+  }
+  
+  
+  
+
+  /*RESPONSIVO*/
+  /* Media query para tabletas y dispositivos de tamaño intermedio */
+  @media (min-width: 1013px) and (max-width: 1300px) {
+    #footer {
+        background-image: url('/static/imagenes/footer.jpg');
+        flex-direction: row;
+        align-items: flex-start;
+    }
+  
+  
+  
+    .footerMainContent {
+        width: calc(100% - 250px); /* Ajuste para asegurar más espacio para .footerSigueme */
+    }
+  
+    .footerSigueme {
+        position: absolute;
+        right: 50px;
+        bottom: 30px;
+    }
+  }
+  
+  /* Media query para dispositivos móviles */
+  @media (max-width: 1013px) {
+    #footer {
+      background-image: url('/static/imagenes/footer.jpg');
+        flex-direction: column;
+        align-items: center;
+    }
+  
+    .footerInfo{
+      margin-right: 50px;
+    }
+  
+    .footerInfo h1{
+      font-size: 50px;
+    }
+  
+    .footerMainContent {
+        width: 100%;
+    }
+  
+    .footerSigueme {
+        position: static;
+        order: -1; /* Asegura que este elemento vaya primero, y ya después los demás */
+        width: 100%;
+        margin-top: 10px;
+    }
+  
+    .footerSigueme h2{
+      font-size: 30px;
+    }
+  }
+  
+  

@@ -1,0 +1,87 @@
+
+  /*ARTICULO: VOLEIBOL*/
+  #deporte {
+    padding-top: 70px;
+  }
+  
+  #deporte header{
+    text-align: center;
+    padding: 20px;
+  }
+  
+  #deporte .deporteContainer{
+    display: flex;
+    justify-content: space-between; /* Alinea los hijos a los extremos del contenedor */
+    align-items: flex-start; /* Alinea los hijos al inicio verticalmente */
+  }
+  
+  #deporte .voleibolContainer{
+    flex: 2.5; /* Ocupa más espacio que el div del otro deporte */
+    display: flex; 
+    flex-direction: column; /* Alinea el contenido en columnas (verticalmente) */
+  }
+  
+  #deporte .voleibolContainer h2{
+    text-align: center;
+    margin-bottom: 25px;
+  }
+  
+  #deporte .voleibolContainer p{
+    font-size: 22px;
+    margin-right: 70px;
+    margin-left: 70px;
+  }
+  
+  #deporte .deporteVoleibolImagenes{
+    margin-bottom: 25px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  #deporte .deporteVoleibolImagenes img{
+    max-height: 350px;
+    border-radius: 15px;
+    margin-left: 15px;
+    
+  }
+  
+  #deporte .futbolContainer{
+    flex: 1.5; /* Menos espacio que el div de Voleibol */
+    display: flex; 
+    flex-direction: column; 
+  }
+  
+  #deporte .futbolContainer h2{
+    text-align: center;
+    margin-bottom: 25px;
+  }
+  
+  #deporte .futbolContainer p{
+    font-size: 22px; 
+    margin-right: 70px;
+    margin-left: 70px;
+  }
+  
+    
+  #deporte .deporteFutbolImagenes img{
+    max-height: 350px;
+    border-radius: 15px; /* Añade un borde redondeado a las imágenes */
+    margin-left: 50px;
+    margin-bottom: 35px;
+  }
+  
+  #deporte .deportesContainer h2{
+    text-align: center;
+  }
+  
+  #deporte .deporteFuente{
+    margin-top: 5px;
+  }
+  
+  #deporte .deporteFuente p, #deporte .deporteFuente a{
+    font-family: "Fira Sans Condensed", sans-serif;
+    font-weight: 200;
+  }
+  
+
+  

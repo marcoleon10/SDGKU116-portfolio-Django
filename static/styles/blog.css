@@ -1,0 +1,67 @@
+/*BARRA DE NAVEGACION PARA ARTICULOS*/
+#blog .navTitulo {
+    display: flex;
+    justify-content: center;
+    padding-top: 100px;
+  }
+  
+  #blog .navBlog {
+    color: white; 
+    display: flex; /* Usa Flexbox para la distribución de elementos internos */
+    justify-content: space-between; /* Espacia los elementos uniformemente en el contenedor */
+    flex-direction: row; 
+    margin-top: 25px;
+    margin-bottom: 25px;
+    
+  }
+  
+  #blog .navBlog a {
+    text-decoration: none; /* Elimina el subrayado del enlace */
+    color: inherit; /* Hereda el color de texto del elemento padre */
+  }
+  
+  #blog .navBlog a:hover, #blog .navBlog a:focus {
+    text-decoration: underline; /* Agrega un subrayado al hacer hover o focus para mejorar la accesibilidad */
+  }
+  
+  #blog .navBlog h1{
+    font-size: 30px;
+  }
+  
+  #blog .navDeporte {
+    background-image: url('/static/imagenes/futbol.jpg');
+  }
+  
+  #blog .navFotografia {
+    background-image: url('/static/imagenes/port_calavera.jpg');
+  }
+  
+  #blog .navCielo {
+    background-image: url('/static/imagenes/port_guada.jpg'); 
+  }
+  
+  
+  #blog .navCielo, #blog .navDeporte, #blog .navFotografia {
+    position: relative; /* Establece una posición relativa para posicionar elementos absolutos dentro */
+    padding: 50px; 
+    background-size: cover; /* Asegura que la imagen de fondo cubra todo el espacio disponible */
+    background-position: center;
+    border-radius: 15px; 
+    overflow: hidden; /* Evita que el contenido sobresalga del contenedor */
+  }
+  
+  
+  /* Estilo para el elemento que añade una capa oscura encima del fondo */
+  #blog .navCielo::after, #blog .navDeporte::after, #blog .navFotografia::after {
+    content: ""; /* Necesario para que el pseudo-elemento se muestre */
+    position: absolute; /* Posiciona absolutamente dentro de su contenedor relativo */
+    top: 0; left: 0; right: 0; bottom: 0; /* Se extiende de esquina a esquina */
+    background-color: rgba(0, 0, 0, 0.5); /* Color semitransparente para oscurecer el fondo */
+    z-index: 1; /* Asegura que esté debajo del contenido, en este caso del H1  */
+  }
+  
+  #blog .navCielo h1, #blog .navDeporte h1, #blog .navFotografia h1 {
+    position: relative; /* Necesario para ajustar z-index */
+    z-index: 2; /* Mantiene el texto por encima del elemento semitransparente oscuro */
+    color: white; 
+  }
