@@ -25,4 +25,5 @@ urlpatterns = [
     path('accounts/', include('django.contrib.auth.urls')),
     path('accounts/', include('accounts.urls')),
     path('like_dislike/', include('interactions.urls')),
+    path('blog/', include('blog.urls')),  # URL para la aplicación blog
 ]

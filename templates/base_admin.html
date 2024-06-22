@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li><a href="{% url 'new_blog_post' %}">Create New Blog Post</a></li>
+        <!-- Otros enlaces de administrador -->
+    </ul>
+    
+    {% block content %}
+        <!-- Contenido específico de cada sección que se extenderá en otras plantillas -->
+    {% endblock %}
+</body>
+</html>

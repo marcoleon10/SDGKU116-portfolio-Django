@@ -1,6 +1,6 @@
 from django.shortcuts import render
-
-# Create your views here.
+from blog.models import BlogPost
 
 def about_view(request):
-    return render(request, 'base.html')
+    posts = BlogPost.objects.all()  # Obtener todos los posts del blog
+    return render(request, 'base.html', {'posts': posts})

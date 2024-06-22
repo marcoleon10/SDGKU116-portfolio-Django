@@ -25,7 +25,7 @@
     
 </head>
 <body>
-
+    
     <header id="home">
         <div class="navbar">
             <h3>L.R. Marco Antonio's Production</h2>
@@ -35,7 +35,7 @@
                 <ul>
                     <li><a href="#home">Home</a></li>
                     <li><a href="#about">About Me</a></li>
-                    <li><a href="#blog">Blog</a></li>
+                    <li><a href="#blog">Blogs</a></li>
                     <li><a href="#footer">Contact</a></li>
                 </ul>
             </div>
@@ -223,8 +223,26 @@
                     <p>Login to like or dislike this section.</p>
                 {% endif %}
             </div>           
-
         </article>
+
+
+        <div class="newArticles">
+            {% for post in posts %}
+                <div class="articleContainer">
+                    <header class="articleTitle">
+                        <h2>{{ post.title }}</h2>
+                    </header>
+                    <div class="articleInfo">
+                        <p>{{ post.content }}</p>
+                    </div>
+                    {% if post.image_url %}
+                        <div class="articleImg">
+                            <img src="{{ post.image_url }}" alt="Imagen del blog">
+                        </div>
+                    {% endif %}
+                </div>
+            {% endfor %}
+        </div>
     </main>
     {% block content %}
         <footer id="footer">
