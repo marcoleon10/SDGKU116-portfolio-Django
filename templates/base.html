@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="{% static './styles/hero.css' %}">
     <link rel="stylesheet" href="{% static './styles/navbar.css' %}">
     <link rel="stylesheet" href="{% static './styles/responsive.css' %}">
+    <link rel="stylesheet" href="{% static './styles/article.css' %}">
     
 </head>
 <body>
@@ -101,7 +102,7 @@
                 </div>
                 <div class="navDeporte">
                     <a href="#deporte">
-                        <h1>The sports more popular in 2024</h1>
+                        <h1>The sports more popular in 2023</h1>
                     </a>
                 </div>
                 <div class="navFotografia">
@@ -236,9 +237,11 @@
                         <p>{{ post.content }}</p>
                     </div>
                     {% if post.image_url %}
+                        {% with 'imagenes/'|add:post.image_url|cut:"http://" as local_image_url %}
                         <div class="articleImg">
-                            <img src="{{ post.image_url }}" alt="Imagen del blog">
+                            <img src="{% static local_image_url %}" alt="Imagen del blog">
                         </div>
+                        {% endwith %}
                     {% endif %}
                 </div>
             {% endfor %}

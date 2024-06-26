@@ -1,0 +1,20 @@
+.newArticles {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.articleContainer {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: calc(50% - 40px); 
+    box-sizing: border-box;
+    margin-bottom: 20px;
+}
+
+.articleImg img {
+    max-width: 100%;
+    border-radius: 10px;
+}
